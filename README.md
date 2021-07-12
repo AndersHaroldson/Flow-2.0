@@ -1,2 +1,4 @@
 # Flow-2.0
-It now runs python scripts!
+This is a text editor/IDE that I made as a fun project.
+
+### README IN PROGRESS ###
