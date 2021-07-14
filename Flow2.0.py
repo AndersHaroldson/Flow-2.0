@@ -17,7 +17,6 @@ class Window(Frame):
         Frame.__init__(self, master)
         self.master = master
         self.init_window()
-        #self.master.bind("<Control-r>", self.saveRun)
 
     def init_window(self):
         self.master.title("Flow")
@@ -63,7 +62,6 @@ class Window(Frame):
         exit()
     
     def OpenFile(event=None):
-        #path = askopenfilename(filetypes=[('Python Files', '*.py')])
         path = askopenfilename()
         with open(path, 'r') as file:
             code = file.read()
@@ -236,19 +234,19 @@ class Window(Frame):
                 self._prompt1 = kw.pop('prompt1')
                 self._prompt2 = kw.pop('prompt2')
                 tk.Text.__init__(self, master, **kw)
-                # --- history
+                #history
                 self.history = History()
                 self._hist_item = 0
                 self._hist_match = ''
 
-                # --- initialization
+                #initialization
                 self._console = InteractiveConsole()  # python console to execute commands
                 self.insert('end', banner, 'banner')
                 self.prompt()
                 self.mark_set('input', 'insert')
                 self.mark_gravity('input', 'left')
 
-                # --- bindings
+                #bindings
                 self.bind('<Control-Return>', self.on_ctrl_return)
                 self.bind('<Shift-Return>', self.on_shift_return)
                 self.bind('<KeyPress>', self.on_key_press)
@@ -363,7 +361,7 @@ class Window(Frame):
                 if self.compare('insert', '<', 'input'):
                     self.mark_set('insert', 'input lineend')
                     return "break"
-                # indent code
+                #indent code
                 sel = self.tag_ranges('sel')
                 if sel:
                     start = str(self.index('sel.first'))
@@ -383,7 +381,7 @@ class Window(Frame):
                 if self.compare('insert', '<', 'input'):
                     self.mark_set('insert', 'input lineend')
                     return 'break'
-                else:  # execute commands
+                else:  #execute commands
                     self.mark_set('insert', 'end')
                     self.insert('insert', '\n')
                     self.insert('insert', self._prompt2, 'prompt')
