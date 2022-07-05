@@ -1,6 +1,7 @@
-# Flow-2.0 -- Still under development
+# Flow-2.0
+
 This is a text editor/IDE that I made as a fun project.
 
-It is pretty much Flow but with extra features such as executing python, general fixes to Flow, keyboard shortcuts, etc
+It is the original but with extra features such as executing python, general fixes to Flow, keyboard shortcuts, etc
 
 ### README IN PROGRESS ###
